@@ -1,0 +1,14 @@
+E:\Hoc\Nam 4 Ki I\Giao tiep nguoi may\CookyAPI\bin\Debug\netcoreapp2.2\CookyAPI.deps.json
+E:\Hoc\Nam 4 Ki I\Giao tiep nguoi may\CookyAPI\bin\Debug\netcoreapp2.2\CookyAPI.runtimeconfig.json
+E:\Hoc\Nam 4 Ki I\Giao tiep nguoi may\CookyAPI\bin\Debug\netcoreapp2.2\CookyAPI.runtimeconfig.dev.json
+e:\Hoc\Nam 4 Ki I\Giao tiep nguoi may\CookyAPI\bin\Debug\netcoreapp2.2\CookyAPI.dll
+e:\Hoc\Nam 4 Ki I\Giao tiep nguoi may\CookyAPI\bin\Debug\netcoreapp2.2\CookyAPI.pdb
+e:\Hoc\Nam 4 Ki I\Giao tiep nguoi may\CookyAPI\obj\Debug\netcoreapp2.2\CookyAPI.csprojAssemblyReference.cache
+e:\Hoc\Nam 4 Ki I\Giao tiep nguoi may\CookyAPI\obj\Debug\netcoreapp2.2\CookyAPI.csproj.CoreCompileInputs.cache
+e:\Hoc\Nam 4 Ki I\Giao tiep nguoi may\CookyAPI\obj\Debug\netcoreapp2.2\CookyAPI.RazorAssemblyInfo.cache
+e:\Hoc\Nam 4 Ki I\Giao tiep nguoi may\CookyAPI\obj\Debug\netcoreapp2.2\CookyAPI.RazorAssemblyInfo.cs
+e:\Hoc\Nam 4 Ki I\Giao tiep nguoi may\CookyAPI\obj\Debug\netcoreapp2.2\CookyAPI.AssemblyInfoInputs.cache
+e:\Hoc\Nam 4 Ki I\Giao tiep nguoi may\CookyAPI\obj\Debug\netcoreapp2.2\CookyAPI.AssemblyInfo.cs
+e:\Hoc\Nam 4 Ki I\Giao tiep nguoi may\CookyAPI\obj\Debug\netcoreapp2.2\CookyAPI.RazorTargetAssemblyInfo.cache
+e:\Hoc\Nam 4 Ki I\Giao tiep nguoi may\CookyAPI\obj\Debug\netcoreapp2.2\CookyAPI.dll
+e:\Hoc\Nam 4 Ki I\Giao tiep nguoi may\CookyAPI\obj\Debug\netcoreapp2.2\CookyAPI.pdb
