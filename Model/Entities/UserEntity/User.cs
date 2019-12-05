@@ -14,5 +14,6 @@ namespace CookyAPI.Model.Entities.UserEntity
         public string Avatar { get; set; }
         public int Role { get; set; }
         public ICollection<Food> Food{get;set;}  
+        public ICollection<Comment> Comment {get;set;}
     }
 }

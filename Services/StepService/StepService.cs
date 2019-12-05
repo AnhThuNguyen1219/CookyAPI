@@ -70,7 +70,6 @@ namespace CookyAPI.Services.StepService
             var oldStep = _context.Steps.Where(s=>s.Food.Id == step.Food.Id).Where(s=>s.Id == step.Id).SingleOrDefault();
             oldStep.Content = step.Content;
             oldStep.No = step.No;
-            oldStep.Image = step.Image;
             _context.SaveChanges();
         }
     }

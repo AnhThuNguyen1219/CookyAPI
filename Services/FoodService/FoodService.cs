@@ -33,6 +33,9 @@ namespace CookyAPI.Services.FoodService
                 Id = f.Id,
                 FoodName = f.FoodName,
                 Material= f.Material,
+                Image=f.Image,
+                PrepareTime= f.PrepareTime,
+                CookTime=f.CookTime,
                 User = new User{
                   // Id = f.User.Id,
                    Name = f.User.Name,
@@ -42,8 +45,7 @@ namespace CookyAPI.Services.FoodService
                {
                // GerneID = f.Gerne.GerneID,
                 GerneName = f.Gerne.GerneName
-               }
-               ,
+               },
                Step = f.Step.Select(s=> new Step{
                    Id = s.Id,
                    Content = s.Content

@@ -15,12 +15,14 @@ namespace CookyAPI
         public DbSet<Food> Foods {get; set;}
         public DbSet<Gerne> Gernes {get;set;}
         public DbSet<Step> Steps { get; set; }
+        public DbSet<Comment> Comments { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<User>().ToTable("User");
             builder.Entity<Food>().ToTable("Food");
             builder.Entity<Step>().ToTable("Step");
             builder.Entity<Gerne>().ToTable("Gerne");
+            builder.Entity<Comment>().ToTable("Comment");
 
             //relationship
             builder.Entity<User>().HasMany(f=>f.Food).WithOne(u=>u.User);

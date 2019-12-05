@@ -12,8 +12,10 @@ namespace CookyAPI.Model.Entities.FoodEntity
         public string Material { get; set; }
         public string PrepareTime { get; set; }
         public string CookTime { get; set; }
+        public string Image{get;set;}
         public User User { get; set; }
         public Gerne Gerne{get; set;}
         public ICollection<Step> Step {get;set;}   
+        public ICollection<Comment> Comment{get;set;}
     }
 }
