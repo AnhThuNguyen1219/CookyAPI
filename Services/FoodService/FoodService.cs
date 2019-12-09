@@ -93,5 +93,33 @@ namespace CookyAPI.Services.FoodService
             
             _context.SaveChanges();
         }
+        public List<Food> GetFoodByName(string Name)//get tat ca thong tin cua 1 mon an
+        {
+            var food = new List<Food>();
+            food = _context.Foods.Where(f=>f.FoodName.Contains(Name)).Select(f=> new Food
+            {
+                Id = f.Id,
+                FoodName = f.FoodName,
+                Material= f.Material,
+                Image=f.Image,
+                PrepareTime= f.PrepareTime,
+                CookTime=f.CookTime,
+                User = new User{
+                  // Id = f.User.Id,
+                   Name = f.User.Name,
+                  // User = f.User
+               },
+               Gerne = new Gerne
+               {
+               // GerneID = f.Gerne.GerneID,
+                GerneName = f.Gerne.GerneName
+               },
+               Step = f.Step.Select(s=> new Step{
+                   Id = s.Id,
+                   Content = s.Content
+               }).ToList()
+            }).ToList();
+            return food;
+        }
     }
 }

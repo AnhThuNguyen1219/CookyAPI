@@ -50,5 +50,7 @@ namespace CookyAPI.Controllers.FoodController
         {
             _ifs.DelFood(id);
         }
+        
+        
     }
 }

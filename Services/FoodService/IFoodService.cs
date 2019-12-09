@@ -13,7 +13,7 @@ namespace CookyAPI.Services.FoodService
         void DelFood(int id);
         void UpdateFood(int id,Food food);
         void AddFood(Food food);
-
+        List<Food> GetFoodByName(string Name);
 
     }
 }
