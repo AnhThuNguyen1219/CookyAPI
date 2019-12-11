@@ -31,7 +31,15 @@ namespace CookyAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(c =>  
+            {  
+                c.AddPolicy("AllowOrigin", options => options.WithOrigins("https://localhost:5001")
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin());  
+            }); 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IUsersService, UsersService>();
             services.AddScoped<IFoodService, FoodService>();
@@ -72,7 +80,10 @@ namespace CookyAPI
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            app.UseCors(
+                builder =>
+                    builder.WithOrigins("http://localhost:5001")
+            );
             app.UseHttpsRedirection();
             //authentication tren mvc
             app.UseAuthentication();

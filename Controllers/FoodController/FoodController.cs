@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using CookyAPI.Model.Entities.FoodEntity;
 using CookyAPI.Services.FoodService;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 
 namespace CookyAPI.Controllers.FoodController
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowOrigin")]
     [Authorize]
     public class FoodController : ControllerBase
     {
