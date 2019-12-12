@@ -61,6 +61,7 @@ namespace CookyAPI.Services.FoodService
                Id = f.Id,
                FoodName = f.FoodName,
                Material = f.Material,
+               Image=f.Image,
                User = new User {Name = f.User.Name},
                Gerne = new Gerne
                {

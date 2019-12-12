@@ -144,10 +144,10 @@ namespace CookyAPI.Migrations
                 columns: new[] { "Id", "CookTime", "FoodName", "GerneID", "Image", "Material", "PrepareTime", "UserId" },
                 values: new object[,]
                 {
-                    { 1, null, "Canh cai nau tom", null, null, "Cai ngot, Tom", null, 1 },
-                    { 2, null, "Ga chien mam", null, null, "Ga", null, 1 },
-                    { 3, null, "Tom rang", null, null, "Tom", null, 5 },
-                    { 4, null, "Canh chua ca loc", null, null, "Do chua, ca", null, 6 }
+                    { 1, null, "Canh cai nau tom", null, "https://img-global.cpcdn.com/recipes/988e1f64c7f36cc7/751x532cq70/canh-c%E1%BA%A3i-dun-n%E1%BA%A5u-tom-recipe-main-photo.jpg", "Cai ngot, Tom", null, 1 },
+                    { 2, null, "Ga chien mam", null, "https://thucthan.com/media/2018/06/canh-ga-chien-nuoc-mam/cach-lam-canh-ga-chien-nuoc-mam.jpg", "Ga", null, 1 },
+                    { 3, null, "Tom rang", null, "https://anh.eva.vn/upload/4-2017/images/2017-10-27/tom-rang-la-chanh-5-1509101794-width650height465.jpg", "Tom", null, 5 },
+                    { 4, null, "Canh chua ca loc", null, "https://sotaynauan.com/wp-content/uploads/2016/12/cach-lam-canh-chua-ca-loc-don-gian-ma-thom-ngon-1.jpg", "Do chua, ca", null, 6 }
                 });
 
             migrationBuilder.InsertData(

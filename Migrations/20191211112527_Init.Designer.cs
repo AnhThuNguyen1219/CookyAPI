@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CookyAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20191209115210_Init")]
+    [Migration("20191211112527_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -75,6 +75,7 @@ namespace CookyAPI.Migrations
                         {
                             Id = 1,
                             FoodName = "Canh cai nau tom",
+                            Image = "https://img-global.cpcdn.com/recipes/988e1f64c7f36cc7/751x532cq70/canh-c%E1%BA%A3i-dun-n%E1%BA%A5u-tom-recipe-main-photo.jpg",
                             Material = "Cai ngot, Tom",
                             UserId = 1
                         },
@@ -82,6 +83,7 @@ namespace CookyAPI.Migrations
                         {
                             Id = 2,
                             FoodName = "Ga chien mam",
+                            Image = "https://thucthan.com/media/2018/06/canh-ga-chien-nuoc-mam/cach-lam-canh-ga-chien-nuoc-mam.jpg",
                             Material = "Ga",
                             UserId = 1
                         },
@@ -89,6 +91,7 @@ namespace CookyAPI.Migrations
                         {
                             Id = 3,
                             FoodName = "Tom rang",
+                            Image = "https://anh.eva.vn/upload/4-2017/images/2017-10-27/tom-rang-la-chanh-5-1509101794-width650height465.jpg",
                             Material = "Tom",
                             UserId = 5
                         },
@@ -96,6 +99,7 @@ namespace CookyAPI.Migrations
                         {
                             Id = 4,
                             FoodName = "Canh chua ca loc",
+                            Image = "https://sotaynauan.com/wp-content/uploads/2016/12/cach-lam-canh-chua-ca-loc-don-gian-ma-thom-ngon-1.jpg",
                             Material = "Do chua, ca",
                             UserId = 6
                         });
