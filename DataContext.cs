@@ -58,9 +58,7 @@ namespace CookyAPI
             builder.Entity<Step>().HasData(
                 new {Id=1, Content="Rua sach rau, sau do cat nho thanh mot doan bang 2cm.",FoodId=1, No=1},
                 new {Id=2, Content="Rua sach tom, lot vo, bam nho tom",FoodId=1, No=2}
-                );
-            
-             
+                );  
         }
         
     }
