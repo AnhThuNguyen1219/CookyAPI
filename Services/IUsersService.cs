@@ -13,7 +13,7 @@ namespace CookyAPI.Services
         void UpdateUser(int id, User user);
         void AddUser(User user);
         void DelUser(int id);
-        User GetLogin(string username, string password);
+        User GetLogin(Login user);
 
     }
 }

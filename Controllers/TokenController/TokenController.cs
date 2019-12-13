@@ -5,6 +5,8 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using CookyAPI.Model.Entities.UserEntity;
+using CookyAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
@@ -15,6 +17,11 @@ namespace CookyAPI.Controllers.TokenController
         private const string SECRET_KEY = "abcgyb126hunjdef";
         public static readonly SymmetricSecurityKey SIGHING_KEY = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SECRET_KEY));
 
+        private IUsersService _ius ;
+        public TokenController(IUsersService ius)
+        {
+            _ius = ius;
+        }
         private string GenerateToken (string username)
         { 
             var token = new JwtSecurityToken(
@@ -29,12 +36,14 @@ namespace CookyAPI.Controllers.TokenController
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        [HttpGet]
-        [Route("api/login/{Name}/{Password}")]
-        public IActionResult Get(string Name, string Password)
+        [HttpPost]
+        [Route("api/login/")]
+        public IActionResult Login([FromBody]Login user)
         {
-            if(Password.Equals("cooky")) return new ObjectResult(GenerateToken(Name));
+            var users = _ius.GetLogin(user);
+            if(users!=null) return new ObjectResult(GenerateToken(user.Name));
             else return BadRequest();
         }
+        
     }
 }

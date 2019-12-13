@@ -33,16 +33,7 @@ namespace CookyAPI.Controllers
         {
             return _ius.GetUserById(id);
         }
-        [HttpGet("check/{username}/{password}")]
-        public ActionResult<User> getLogin(string username, string password)
-        {
-           var user =  _ius.GetLogin(username, password);
-           if(user==null)
-           {
-               return BadRequest();
-           }
-           else return user;
-        }
+        
         [HttpPost]
         public void Post([FromBody] User user)
         {

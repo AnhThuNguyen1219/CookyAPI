@@ -92,10 +92,10 @@ namespace CookyAPI.Services
             _context.SaveChanges();
         }
 
-        public User GetLogin(string username, string password)
+        public User GetLogin(Login user)
         {
-            var user = _context.Users.FirstOrDefault(u=>u.Name==username&&u.Password==password);
-            return user;
+            var users = _context.Users.FirstOrDefault(u=>u.Name==user.Name&&u.Password==user.Password);
+            return users;
         }
     }
 }
