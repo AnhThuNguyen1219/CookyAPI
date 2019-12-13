@@ -14,6 +14,7 @@ namespace CookyAPI.Services.FoodService
         void UpdateFood(int id,Food food);
         void AddFood(Food food);
         List<Food> GetFoodByName(string Name);
+        List<Food> GetFoodByGerne(int gerneId);
 
     }
 }

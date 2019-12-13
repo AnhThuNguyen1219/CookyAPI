@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using CookyAPI.Model.Entities.FoodEntity;
 using CookyAPI.Services.GerneService;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CookyAPI.Controllers.GerneController
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowOrigin")]
     public class GerneController : ControllerBase
     {
         IGerneService _igs;

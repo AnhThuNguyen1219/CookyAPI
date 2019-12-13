@@ -6,12 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using CookyAPI.Services;
 using CookyAPI.Model.Entities.UserEntity;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 
 namespace CookyAPI.Controllers
 {
     [Route("api/[controller]")]
     [Authorize]
     [ApiController]
+    [EnableCors("AllowOrigin")]
     public class UsersController : ControllerBase
     {
         private IUsersService _ius ;

@@ -11,13 +11,13 @@ namespace CookyAPI.Migrations
                 name: "Gerne",
                 columns: table => new
                 {
-                    GerneID = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     GerneName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Gerne", x => x.GerneID);
+                    table.PrimaryKey("PK_Gerne", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -49,16 +49,16 @@ namespace CookyAPI.Migrations
                     CookTime = table.Column<string>(nullable: true),
                     Image = table.Column<string>(nullable: true),
                     UserId = table.Column<int>(nullable: true),
-                    GerneID = table.Column<int>(nullable: true)
+                    GerneId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Food", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Food_Gerne_GerneID",
-                        column: x => x.GerneID,
+                        name: "FK_Food_Gerne_GerneId",
+                        column: x => x.GerneId,
                         principalTable: "Gerne",
-                        principalColumn: "GerneID",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Food_User_UserId",
@@ -118,36 +118,44 @@ namespace CookyAPI.Migrations
 
             migrationBuilder.InsertData(
                 table: "Gerne",
-                columns: new[] { "GerneID", "GerneName" },
-                values: new object[] { 1, "Bua sang" });
+                columns: new[] { "Id", "GerneName" },
+                values: new object[,]
+                {
+                    { 1, "Sáng" },
+                    { 2, "Trưa" },
+                    { 3, "Tối" },
+                    { 4, "Á" },
+                    { 5, "Âu" },
+                    { 6, "Mỹ" }
+                });
 
             migrationBuilder.InsertData(
                 table: "User",
                 columns: new[] { "Id", "Avatar", "EMail", "Name", "Password", "Role" },
                 values: new object[,]
                 {
-                    { 1, null, "chang@gmail.com", "Chang", "cooky", 1 },
-                    { 2, null, "chu@gmail.com", "Chu", "cooky", 0 },
+                    { 9, null, "chi@gmail.com", "Chi", "cooky", 0 },
+                    { 8, null, "na@gmail.com", "Na", "cooky", 0 },
+                    { 7, null, "khoabe@gmail.com", "Khoa Be", "cooky", 0 },
+                    { 6, null, "ponkgmail.com", "Ponk", "cooky", 0 },
                     { 3, null, "cao@gmail.com", "Cao", "cooky", 0 },
                     { 4, null, "cuc@gmail.com", "Cuc", "cooky", 0 },
-                    { 5, null, "kabi@gmail.com", "Kabi", "cooky", 0 },
-                    { 6, null, "ponkgmail.com", "Ponk", "cooky", 0 },
-                    { 7, null, "khoabe@gmail.com", "Khoa Be", "cooky", 0 },
-                    { 8, null, "na@gmail.com", "Na", "cooky", 0 },
-                    { 9, null, "chi@gmail.com", "Chi", "cooky", 0 },
                     { 10, null, "zayn@gmail.com", "Zayn", "cooky", 0 },
+                    { 2, null, "chu@gmail.com", "Chu", "cooky", 0 },
+                    { 1, null, "chang@gmail.com", "Chang", "cooky", 1 },
+                    { 5, null, "kabi@gmail.com", "Kabi", "cooky", 0 },
                     { 11, null, "kem@gmail.com", "Kem", "cooky", 0 }
                 });
 
             migrationBuilder.InsertData(
                 table: "Food",
-                columns: new[] { "Id", "CookTime", "FoodName", "GerneID", "Image", "Material", "PrepareTime", "UserId" },
+                columns: new[] { "Id", "CookTime", "FoodName", "GerneId", "Image", "Material", "PrepareTime", "UserId" },
                 values: new object[,]
                 {
-                    { 1, null, "Canh cai nau tom", null, "https://img-global.cpcdn.com/recipes/988e1f64c7f36cc7/751x532cq70/canh-c%E1%BA%A3i-dun-n%E1%BA%A5u-tom-recipe-main-photo.jpg", "Cai ngot, Tom", null, 1 },
-                    { 2, null, "Ga chien mam", null, "https://thucthan.com/media/2018/06/canh-ga-chien-nuoc-mam/cach-lam-canh-ga-chien-nuoc-mam.jpg", "Ga", null, 1 },
-                    { 3, null, "Tom rang", null, "https://anh.eva.vn/upload/4-2017/images/2017-10-27/tom-rang-la-chanh-5-1509101794-width650height465.jpg", "Tom", null, 5 },
-                    { 4, null, "Canh chua ca loc", null, "https://sotaynauan.com/wp-content/uploads/2016/12/cach-lam-canh-chua-ca-loc-don-gian-ma-thom-ngon-1.jpg", "Do chua, ca", null, 6 }
+                    { 1, null, "Canh cai nau tom", 1, "https://img-global.cpcdn.com/recipes/988e1f64c7f36cc7/751x532cq70/canh-c%E1%BA%A3i-dun-n%E1%BA%A5u-tom-recipe-main-photo.jpg", "Cai ngot, Tom", null, 1 },
+                    { 2, null, "Ga chien mam", 3, "https://thucthan.com/media/2018/06/canh-ga-chien-nuoc-mam/cach-lam-canh-ga-chien-nuoc-mam.jpg", "Ga", null, 1 },
+                    { 3, null, "Tom rang", 2, "https://anh.eva.vn/upload/4-2017/images/2017-10-27/tom-rang-la-chanh-5-1509101794-width650height465.jpg", "Tom", null, 5 },
+                    { 4, null, "Canh chua ca loc", 4, "https://sotaynauan.com/wp-content/uploads/2016/12/cach-lam-canh-chua-ca-loc-don-gian-ma-thom-ngon-1.jpg", "Do chua, ca", null, 6 }
                 });
 
             migrationBuilder.InsertData(
@@ -171,9 +179,9 @@ namespace CookyAPI.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Food_GerneID",
+                name: "IX_Food_GerneId",
                 table: "Food",
-                column: "GerneID");
+                column: "GerneId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Food_UserId",

@@ -21,7 +21,7 @@ namespace CookyAPI.Services.GerneService
         public void DelGerne(int id)
         {
             var ge = new Gerne();
-            ge = _context.Gernes.Where(g=>g.GerneID == id).SingleOrDefault();
+            ge = _context.Gernes.Where(g=>g.Id == id).SingleOrDefault();
             _context.Gernes.Remove(ge);
             _context.SaveChanges();
         }
@@ -31,7 +31,7 @@ namespace CookyAPI.Services.GerneService
             var listge = new List<Gerne>();
             listge = _context.Gernes.Select(ge => new Gerne 
             {
-                GerneID = ge.GerneID,
+                Id = ge.Id,
                 GerneName = ge.GerneName
 
             }).ToList();
@@ -43,16 +43,16 @@ namespace CookyAPI.Services.GerneService
             var ge = new Gerne();
             ge = _context.Gernes.Select(ger => new Gerne 
             {
-                GerneID = ge.GerneID,
+                Id = ge.Id,
                 GerneName = ge.GerneName
 
-            }).Where(ger=>ger.GerneID ==id).SingleOrDefault();
+            }).Where(ger=>ger.Id ==id).SingleOrDefault();
             return ge;
         }
 
         public void UpdateGerne(int id, Gerne ge)
         {
-            var oldGe = _context.Gernes.Where(ger=>ger.GerneID==id).SingleOrDefault();
+            var oldGe = _context.Gernes.Where(ger=>ger.Id==id).SingleOrDefault();
             oldGe.GerneName = ge.GerneName;
             
             _context.SaveChanges();

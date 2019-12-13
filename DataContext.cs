@@ -45,14 +45,19 @@ namespace CookyAPI
                 );
 
             builder.Entity<Gerne>().HasData(
-                new {GerneID = 1, GerneName="Bua sang"}
+                new {Id = 1, GerneName="Sáng"},
+                new {Id = 2, GerneName="Trưa"},
+                new {Id = 3, GerneName="Tối"},
+                new {Id = 4, GerneName="Á"},
+                new {Id = 5, GerneName="Âu"},
+                new {Id = 6, GerneName="Mỹ"}
             );
 
             builder.Entity<Food>().HasData(
                 new {Id=1,FoodName= "Canh cai nau tom", Material="Cai ngot, Tom", UserId=1, GerneId=1, Image="https://img-global.cpcdn.com/recipes/988e1f64c7f36cc7/751x532cq70/canh-c%E1%BA%A3i-dun-n%E1%BA%A5u-tom-recipe-main-photo.jpg"},
-                new {Id=2,FoodName= "Ga chien mam", Material="Ga", UserId=1,GerneId=1, Image="https://thucthan.com/media/2018/06/canh-ga-chien-nuoc-mam/cach-lam-canh-ga-chien-nuoc-mam.jpg"},
-                new {Id=3,FoodName= "Tom rang", Material="Tom", UserId=5,GerneId=1, Image="https://anh.eva.vn/upload/4-2017/images/2017-10-27/tom-rang-la-chanh-5-1509101794-width650height465.jpg"},
-                new {Id=4,FoodName= "Canh chua ca loc", Material="Do chua, ca", UserId=6,GerneId=1, Image="https://sotaynauan.com/wp-content/uploads/2016/12/cach-lam-canh-chua-ca-loc-don-gian-ma-thom-ngon-1.jpg"}
+                new {Id=2,FoodName= "Ga chien mam", Material="Ga", UserId=1,GerneId=3, Image="https://thucthan.com/media/2018/06/canh-ga-chien-nuoc-mam/cach-lam-canh-ga-chien-nuoc-mam.jpg"},
+                new {Id=3,FoodName= "Tom rang", Material="Tom", UserId=5,GerneId=2, Image="https://anh.eva.vn/upload/4-2017/images/2017-10-27/tom-rang-la-chanh-5-1509101794-width650height465.jpg"},
+                new {Id=4,FoodName= "Canh chua ca loc", Material="Do chua, ca", UserId=6,GerneId=4, Image="https://sotaynauan.com/wp-content/uploads/2016/12/cach-lam-canh-chua-ca-loc-don-gian-ma-thom-ngon-1.jpg"}
                 );
 
             builder.Entity<Step>().HasData(

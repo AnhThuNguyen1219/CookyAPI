@@ -51,6 +51,7 @@ namespace CookyAPI.Services.StepService
         { 
             var listStep = _context.Steps.Where(s=>s.Food.Id==foodID).Select(s=>new Step{
                 Id = s.Id,
+                No = s.No,
                 Content = s.Content
               }).ToList();
             return listStep;
@@ -60,6 +61,7 @@ namespace CookyAPI.Services.StepService
         { 
             var step = _context.Steps.Where(s=>s.Food.Id==foodID).Select(s=>new Step{
                 Id = s.Id,
+                No = s.No,
                 Content = s.Content
               }).Where(s=>s.Id==id).SingleOrDefault();
               return step;

@@ -4,12 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using CookyAPI.Model.Entities.FoodEntity;
 using CookyAPI.Services.StepService;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CookyAPI.Controllers.StepController
 {
-    [Route("api/food/{foodID}/[controller]")]
+    [Route("api/[controller]/{foodID}/")]
     [ApiController]
+    [EnableCors("AllowOrigin")]
     public class StepController : ControllerBase
     {
         IStepService _iss;

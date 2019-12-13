@@ -112,7 +112,7 @@ namespace CookyAPI.Services.FoodService
                },
                Gerne = new Gerne
                {
-               // GerneID = f.Gerne.GerneID,
+                //GerneID = f.Gerne.GerneID,
                 GerneName = f.Gerne.GerneName
                },
                Step = f.Step.Select(s=> new Step{
@@ -122,5 +122,36 @@ namespace CookyAPI.Services.FoodService
             }).ToList();
             return food;
         }
+        public List<Food> GetFoodByGerne(int gerneId)//get tat ca thong tin cua 1 mon an
+        {
+            var food = new List<Food>();
+            food = _context.Foods.Where(f=>f.Gerne.Id==gerneId).Select(f=> new Food
+            {
+                Id = f.Id,
+                FoodName = f.FoodName,
+                Material= f.Material,
+                Image=f.Image,
+                PrepareTime= f.PrepareTime,
+                CookTime=f.CookTime,
+                User = new User{
+                  // Id = f.User.Id,
+                   Name = f.User.Name,
+                  // User = f.User
+               },
+               Gerne = new Gerne
+               {
+               // GerneID = f.Gerne.GerneID,
+                GerneName = f.Gerne.GerneName
+               },
+               Step = f.Step.Select(s=> new Step{
+                   Id = s.Id,
+                   No=s.No,
+                   Content = s.Content
+               }).ToList()
+            }).ToList();
+            return food;
+        }
+
+        
     }
 }
